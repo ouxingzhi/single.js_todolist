@@ -26,6 +26,7 @@ define(function(require){
 			'click .todolist li':function(e){
 				var el = $(e.currentTarget);
 				var id = el.attr('data-id');
+				if(!id) return;
 				var target = $(e.target);
 				var self = this;
 				if(target.hasClass('del')){

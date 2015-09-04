@@ -50,7 +50,18 @@ define(function(require){
 						]
 					});
 					return;
+				}else if(target.hasClass('select')){
+					if(target[0].checked){
+						el.addClass('deled');
+					}else{
+						el.removeClass('deled')
+					}
+					var obj = DoToStore.getOne(id);
+					var status = +target[0].checked;
+					DoToStore.edit(id,obj.content,status);
+					return;
 				}
+
 				this.showLoading();
 				this.forward('view?id='+el.attr('data-id'));
 			}

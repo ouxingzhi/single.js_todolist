@@ -5,7 +5,7 @@
 </div>
 <script type="text/template" id="tpl-todolist-item">
 	<%_.each(list,function(o){%>
-		<li data-id="<%=o.id%>"><div><%=o.content%></div><span class="del"></span></li>
+		<li class="<%if(o.status == 1){%>deled<%}%>" data-id="<%=o.id%>"><em><input type="checkbox" class="select" <%if(o.status == 1){%>checked="checked"<%}%>/></em><div><%=o.content%></div><span class="del"></span></li>
 	<%});%>
 	<%if(!list || !list.length){%>
 		<li class="empty">没有内容。<button class="js_add">添加</button></li>

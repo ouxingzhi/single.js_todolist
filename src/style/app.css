@@ -115,13 +115,22 @@ body .ui-dialog-buttons button:active{ background-color:#d0d0d0;}
 
 .todolist li.empty{  text-align:center; background:none;}
 
-.todolist li div{ padding-right:30px; overflow:hidden; height:100%; text-overflow:ellipsis; white-space: nowrap}
+.todolist li div{ padding:0px 30px 0px 20px; overflow:hidden; height:100%; text-overflow:ellipsis; white-space: nowrap; position:relative;}
 
 .todolist li .del{ position:absolute; width:40px; height:100%; right:0px; top:0px; background:url(del.png) no-repeat center center; background-size:30% auto;}
+.todolist li em{ position:absolute;    left: 11px; top: 9px; z-index:99;}
+.todolist li em input{ width:20px; height:20px; padding:0px; margin:0px; float:left;}
+.todolist li.deled{
+	color:#ccc;
+}
+.todolist li.deled div{
+	text-decoration:line-through
+}
 
 .todolist-edit{
 	width:100%;
 	height:100%;
+
 }
 #edit{
 	border:0px;

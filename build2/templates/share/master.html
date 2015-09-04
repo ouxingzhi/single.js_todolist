@@ -1,0 +1,32 @@
+<div class="gl-bg-mask"></div><div class="sh-body"><div class="sh-listeners"></div><div class="sh-info-box">å</div></div><div class="sh-logo"></div><script type="text/template" id="tpl_listeners"><ul>
+	<%_.each(list,function(o){%>
+	<li>
+		<span class="sh-avatar"><img src="<%=(o.pic||defaultHand)%>"/></span>
+		<span class="sh-name"><%=o.nickName%></span>
+	</li>
+	<%});%>
+	</ul></script><script type="text/template" id="tpl_listen_info"><div class="sh-record-info-box">
+			<div class="sh-record-info">
+				<div class="sh-re-left sh-r">
+					<span>我们共度的音乐时光</span>
+					<strong><%=totalTime%></strong>
+					<span>分钟</span>
+				</div>
+				<div class="sh-re-right sh-r">
+					<span>一起听</span>
+					<strong><%=songs%></strong>
+					<span>首歌</span>
+				</div>
+			</div>
+		</div>
+		<%if(songName){%>
+		<div class="sh-recordsong-info-box">
+			<div class="sh-recordsong-info">
+				<div style="display:none" class="sh-re-img"><img src="<%=albumpic%>"/></div>
+				<div class="sh-re-songname">
+					<span>最近听的一首歌</span>
+					<span>《<%=songName%>》</span>
+				</div>
+			</div>
+		</div>
+		<%}%></script>

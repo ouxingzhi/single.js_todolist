@@ -1,0 +1,1 @@
+define("webapp/app.config.js",[],function(require){return{viewpath:"webapp/views/",templatepath:"webapp/templates/",defaultFrame:"main",frames:{main:{viewpath:"webapp/views/",templatepath:"webapp/templates/",framebox:"main",defaultView:"index"}}}});

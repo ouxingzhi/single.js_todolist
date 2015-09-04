@@ -1,0 +1,11 @@
+<div class="f-e-box js_body"></div><script type="text/template" id="tpl-body"><div class="f-e-avatar">
+		<%if(user.picUrl){%>
+		<img src="<%=user.picUrl%>" class="pic"/>
+		<%}else{%>
+		<span class="select-avatar">选择头像</span>
+		<%}%>
+		<input type="hidden" value="<%=user.picUrl%>" id="pic"/>
+	</div>
+	<div class="f-e-name">
+		<input type="text" placeholder="快给TA取个昵称吧～" value="<%=user.nickName%>" class="nickname" id="nickname"/>
+	</div></script>

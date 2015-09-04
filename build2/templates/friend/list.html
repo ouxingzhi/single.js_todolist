@@ -1,0 +1,49 @@
+<div class="qrbox-bg"><div class="qrbox"></div><div class="qrbox-tit">我的二维码</div></div><ul class="friend-list"></ul><script type="text/template" id="tpl-friendlist"><%_.each(list,function(o,i){%>
+	<% var m = o.masterStatistic || {};%>
+	<li>
+		<div class="f-box js-friend-item" data-uid="<%=o._id%>">
+			<div class="f-head">
+				<span class="f-avatar"><img src="<%=(o.pic||defaultHand)%>"/></span>
+				<span class="f-name"><%=o.nickName%></span>
+				<%if(!o.register){%>
+				<span class="f-edit btn js_edit_friend"></span>
+				<%}%>
+			</div>
+			<%
+				var w = DDate.diffFormat(new Date(0),new Date(m.cumDuration*1000));
+				var wt = w.h ? (w.h + '小时') : (w.i + '分钟');
+			%>
+			<div class="f-info">
+				<div class="f-info-bg">
+					<img <%if(!m.pic){%>class="notblur"<%}%> src="<%=(m.pic||defaultMinCover)%>"/>
+					<div class="f-info-mask"></div>
+				</div>
+				
+				
+				<%if(wt !== '0分钟'){%>
+				<span class="f-time<%if(!m.goldSongName){%> f-songempty<%}%>">
+					<em>和TA共度了</em>
+					<em><strong><%=wt%></strong>的音乐时光！</em>
+				</span>
+				<%if(m.goldSongName){%>
+				<span class="f-br"></span>
+				<span class="f-song">
+					<em>你们的金曲</em>
+					<em><%=m.goldSongName%></em>
+				</span>
+				<%}%>
+				<%}else{%>
+				<span class="st-empty">朋友们，一起听歌吧！</span>
+				<%}%>
+			</div>
+		</div>
+	</li>
+	<%});%>
+	<%if(list.length < 8){%>
+	<li>
+		<div class="f-box f-add-box addfriends">
+			<div class="f-add-icon"></div>
+			<div class="f-add-tit">快扫码添加好友</div>
+		</div>
+	</li>
+	<%}%></script>

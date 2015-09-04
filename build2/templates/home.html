@@ -1,0 +1,55 @@
+<ul class="frilist js_fribox"><!--<li>
+		<img class="fri-avatar" src="./avatars/1.png"/>
+		<span class="fri-center">
+			<strong class="fri-name">Name</strong>
+			<span class="fri-state">他在听歌...</span>
+		</span>
+		<span class="fri-btn"><i class="icon-eye"></i>去看看</span>
+	</li>
+	<li>
+		<img class="fri-avatar" src="./avatars/2.png"/>
+		<span class="fri-center">
+			<strong class="fri-name">Name</strong>
+			<span class="fri-state">他在听歌...</span>
+		</span>
+		<span class="fri-btn"><i class="icon-headset"></i>去看看</span>
+	</li>
+	<li>
+		<img class="fri-avatar" src="./avatars/2.png"/>
+		<span class="fri-center">
+			<strong class="fri-name">Name</strong>
+			<span class="fri-state">他在听歌...</span>
+		</span>
+		<span class="fri-btn"><i class="icon-headset"></i>去看看</span>
+	</li>
+	<li class="fri-add">
+		<span class="fri-add-icon"></span>
+		<div>点击这里加好友，跟TA一起听</div>
+	</li>--></ul><script type="text/template" id="tpl_friitem"><%_.each(list,function(o){%>
+	<li data-uid="<%=o._id%>">
+		<i class="target"></i>
+		<img class="fri-avatar" src="<%=(o.pic||defaultHand)%>"/>
+		<span class="fri-center">
+			<strong class="fri-name"><%=o.nickName%></strong>
+			<span class="fri-state"></span>
+		</span>
+		<span class="fri-btn js_eyebtn"><i class="icon-eye"></i>去看看</span>
+		<span class="fri-btn js_headsetbtn"><i class="icon-headset"></i>去听听</span>
+	</li>
+	<%});%>
+	<%if(list && list.length < 8 && false){%>
+	<li class="fri-add">
+		<span class="fri-add-icon"></span>
+		<div>点击这里加好友，跟TA一起听</div>
+	</li>
+	<%}%>
+	<li class="fri-share js_share">
+	</li>
+	<%if((!list || !list.length) && false){%>
+	<!--<li class="fri-empty">
+		<span class="arrow"></span>
+		<div><em>1</em>点击右上角扫码身边好友</div>
+		<div><em>2</em>当你像往常一样在听歌时，朋友可以看到你的动态，同步听你在听的歌哦</div>
+		<div><em>3</em>只有两步╰(￣▽￣)╮</div>
+	</li>-->
+	<%}%></script>

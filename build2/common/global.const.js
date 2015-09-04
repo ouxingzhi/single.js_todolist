@@ -1,0 +1,1 @@
+define("webapp/common/global.const.js",[],function(require){return window.defaultHand="./avatars/defaulthand2.png",window.defaultCover="./images/background.jpg",window.defaultMinCover="./images/bg.png",{}});

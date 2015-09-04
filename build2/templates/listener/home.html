@@ -1,0 +1,56 @@
+<div class="l-g-box"><div class="l-g-friends-box"><div class="l-g-friends"><ul class="l-g-friend-list js_master_list"></ul></div></div><div class="l-g-history"><ul></ul></div></div><script type="text/template" id="tpl_friend_list"><%if(list.length){%>
+	<%_.each(list,function(o,i){%>
+	<li data-masterid="<%=o.masterId%>">
+		<div class="l-g-li">
+			<div class="play-bg"><div class="img" style="background-position:center center;background-image:url(<%=(o.albumPicUrl||defaultMinCover)%>)"></div><div class="play-bg-mask"></div></div>
+			<div class="l-g-avatar"><img src="<%=(o.picUrl||defaultHand)%>"/></div>
+			<div class="l-g-name"><%=o.nickName%></div>
+			<div class="l-g-txt">跟TA听</div>
+		</div>
+	</li>
+	<%});%>
+	<%}else{%>
+	<li class="list-empty">朋友们没在放歌哦</li>
+	<%}%></script><script type="text/template" id="tpl_history"><ul>
+		<%if(list && list.length){%>
+		<%_.each(list,function(o,i){%>
+		<% 
+		var endTime = new Date(o.endTime*1000);
+		var diff = new Date() - o.endTime*1000;
+		var e = DDate.diffFormat(new Date(o.endTime*1000)); 
+		var t = (e.d ? e.d + '天' : '') + ( !e.d ? ((e.h ? e.h + '小时':'') + e.i + '分钟') : '');
+		var time = '';
+		if(diff < 3e5){
+			time = '刚刚';
+		}else if(diff < 36e5){
+			var e = DDate.diffFormat(new Date(o.endTime*1000)); 
+			time = ((e.d ? e.d + '天' : '') + ( !e.d ? ((e.h ? e.h + '小时':'') + e.i + '分钟') : '')) + '前';
+		}else{
+			var day = DDate.format(new Date(o.endTime*1000),'O');
+			if(day == '今天'){
+				time =  DDate.format(new Date(o.endTime*1000),'H:i');
+			}else if(day == '昨天'){
+				time =  DDate.format(new Date(o.endTime*1000),'O H:i');
+			}else{
+				time =  DDate.format(new Date(o.endTime*1000),'n月j日 H:i');
+			}
+		}
+		var w = DDate.diffFormat(new Date(0),new Date(o.duration*1000));
+		var wt = (w.h ? ('<strong>'+w.h+'</strong>' + '小时') : '') + '<strong>' + w.i + '</strong>' + '分钟';
+		if(o.duration < 60*5){
+			wt = '一会';
+		}
+		%>
+		<li>
+			<span class="l-g-avatar"><img src="<%=(o.pic||defaultHand)%>"/></span>
+			<span class="l-g-info">
+				<span class="l-g-name"><%=o.nickName%></span>
+				<span class="l-g-totaltime">听了你<%=wt%></span>
+			</span>
+			<span class="l-g-lasttime"><%=time%></span>
+		</li>
+		<%});%>
+		<%}else{%>
+		<li class="empty-list"></li>
+		<%}%>
+	</ul></script>

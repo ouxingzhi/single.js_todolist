@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+	<meta name="mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="data-spm" content="a312j"/>
+	<title>todolist -- single.js</title>
+	<link rel="stylesheet" type="text/css" href="http://ouxingzhi.github.io/single.js/build/css/single.css"/>
+	<link rel="stylesheet" type="text/css" href="./src/style/app.css"/>
+
+</head>
+<body data-spm="7736830">
+	<script type="text/javascript" src="./libs/fastclick.js?t=1436181100205"></script>
+	<script>
+		if ('addEventListener' in document) {
+		    document.addEventListener('DOMContentLoaded', function() {
+		        FastClick.attach(document.body);
+		    }, false);
+		} 
+	</script>
+	<script type="text/javascript" src="http://ouxingzhi.github.io/single.js/build/libs/libs.min.js"></script>
+	<script type="text/javascript" src="config.js?t=1436181100205"></script>
+	<script type="text/javascript" src="http://ouxingzhi.github.io/single.js/build/main.min.js"></script>
+	<!--<script type="text/javascript" src="./build2/main.min.js?t=1436181100205"></script>-->
+	
+	<script type="text/javascript">
+		seajs.use(['SINGLE/mvc/application','webapp/app.config'],function(MvcApplication,config){
+			new MvcApplication(config).start();
+		});
+	</script>
+</body>
+</html>

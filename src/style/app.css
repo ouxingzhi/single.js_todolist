@@ -102,7 +102,6 @@ body .ui-dialog-buttons button:active{ background-color:#d0d0d0;}
 }
 
 .todolist{
-	border-top:1px solid #eee;
 }
 
 .todolist li{
@@ -114,7 +113,7 @@ body .ui-dialog-buttons button:active{ background-color:#d0d0d0;}
 	position:relative;
 }
 
-.todolist li.empty{ padding:20px; text-align:center;}
+.todolist li.empty{  text-align:center; background:none;}
 
 .todolist li div{ padding-right:30px; overflow:hidden; height:100%; text-overflow:ellipsis; white-space: nowrap}
 
